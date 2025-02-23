@@ -1,3 +1,4 @@
+import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
 import ProjectCard from './components/ProjectCard/ProjectCard';
@@ -10,27 +11,27 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-900 antialiased scroll-smooth">
+    <div className="app">
       <Navbar />
       <Hero />
-      <section id="about" className="py-16 px-4 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-800">About Me</h2>
-        <p className="mt-4 text-lg text-gray-600 leading-relaxed">
+      <section id="about" className="about-section">
+        <h2 className="about-title">About Me</h2>
+        <p className="about-text">
           CS student at [Your School]. I code, I debug, I conquer—passionate about building impactful tech.
         </p>
       </section>
-      <section id="projects" className="py-16 px-4 bg-gray-100">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Projects</h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section id="projects" className="projects-section">
+        <h2 className="projects-title">Projects</h2>
+        <div className="projects-grid">
           {projects.map((p) => (
             <ProjectCard key={p.title} title={p.title} desc={p.desc} link={p.link} />
           ))}
         </div>
       </section>
-      <section id="contact" className="py-16 px-4 bg-gray-900 text-white">
-        <h2 className="text-3xl font-bold text-center">Contact</h2>
-        <p className="mt-4 text-lg text-center">
-          Email: <a href="mailto:you@email.com" className="text-blue-400 hover:underline">you@email.com</a>
+      <section id="contact" className="contact-section">
+        <h2 className="contact-title">Contact</h2>
+        <p className="contact-text">
+          Email: <a href="mailto:you@email.com" className="contact-link">you@email.com</a>
         </p>
       </section>
     </div>

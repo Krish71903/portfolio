@@ -1,0 +1,97 @@
+.parent {
+  width: 290px;
+  height: 300px;
+  perspective: 1000px;
+  margin: 20px; /* Added spacing between cards */
+}
+
+.card {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #333333 0%, #666666 100%); /* Grey gradient */
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  box-shadow: rgba(0, 0, 0, 0) 40px 50px 25px -40px, rgba(0, 0, 0, 0.3) 0px 25px 25px -5px; /* Black shadows */
+}
+
+.glass {
+  transform-style: preserve-3d;
+  position: absolute;
+  inset: 8px;
+  border-radius: 55px;
+  border-top-right-radius: 100%;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.5) 100%); /* Subtle white gradient */
+  transform: translate3d(0px, 0px, 25px);
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.5s ease-in-out;
+}
+
+.content {
+  padding: 80px 60px 0px 30px;
+  transform: translate3d(0, 0, 26px);
+}
+
+.content .title {
+  display: block;
+  color: #ffffff; /* White text */
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.content .text {
+  display: block;
+  color: #cccccc; /* Light grey text */
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.bottom {
+  padding: 10px 12px;
+  transform-style: preserve-3d;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform: translate3d(0, 0, 26px);
+}
+
+.bottom .view-more {
+  display: flex;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  background: transparent;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.bottom .view-more:hover {
+  transform: translate3d(0, 0, 10px);
+  background: #000000; /* Black fill on hover */
+}
+
+.bottom .view-more .view-more-button {
+  background: none;
+  border: none;
+  color: #ffffff; /* White text */
+  font-weight: bolder;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.bottom .view-more .svg {
+  fill: none;
+  stroke: #ffffff; /* White stroke */
+  stroke-width: 3px;
+  max-height: 15px;
+  margin-left: 5px;
+}
+
+.parent:hover .card {
+  transform: rotate3d(1, 1, 0, 30deg);
+  box-shadow: rgba(0, 0, 0, 0.4) 30px 50px 25px -40px, rgba(0, 0, 0, 0.2) 0px 25px 30px 0px; /* Darker black shadows */
+}
